@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Demo.aspx.cs" Inherits="ASP.Demo" %>
 
+<!-- 7. Se registra el WebUserControl, para que aparezca en la ejecución del programa -->
+<%@ Register Src="~/WebUserControl.ascx" TagName="WebControl" TagPrefix="TWebControl"%>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -31,6 +34,10 @@
         <p>
             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
         </p>
+        <h1>De aca en adelante, se muestra la información del WebUserControl</h1>
+
+        <!-- 8. Se hace referencia al componente del WebUserControl -->
+        <TWebControl:WebControl ID="Header" runat="server" />
     </form>
 </body>
 </html>

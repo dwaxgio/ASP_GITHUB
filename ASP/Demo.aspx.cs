@@ -16,10 +16,14 @@ namespace ASP
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            // 3. Se envia el valor del textbox al cliente
-            Response.Write("El nombre introducido es: " + txtName.Text + "</br>");
-            // 4. Se envia el valor seleccionado del listbox al cliente
-            Response.Write(lstLocation.SelectedItem.Text + "</br>");
+            //// 3. Se envia el valor del textbox al cliente
+            //Response.Write("El nombre introducido es: " + txtName.Text + "</br>");
+            //// 4. Se envia el valor seleccionado del listbox al cliente
+            //Response.Write(lstLocation.SelectedItem.Text + "</br>");
+
+            // 6. session management
+            Session["Name"] = txtName.Text; // Se guarda el nombre introducido en el textbox en el objeto de Session
+            Response.Write(Session["Name"]); // Se devuelve / muestra al usuario la informacion de la variable de sesion
 
             // 5. Se marcan todos los controles como invisibles
             lblName.Visible = false;
