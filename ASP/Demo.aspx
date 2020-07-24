@@ -34,10 +34,12 @@
         <p>
             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
         </p>
+
         <h1>De aca en adelante, se muestra la información del WebUserControl</h1>
 
         <!-- 8. Se hace referencia al componente del WebUserControl -->
-        <TWebControl:WebControl ID="Header" runat="server" />
+        <TWebControl:WebControl ID="Header" runat="server" MinValue="100"/>
+        
     </form>
 </body>
 </html>
