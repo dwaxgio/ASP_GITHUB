@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <div>
             <!-- 1. Response retorna información al usuario -->
-            <!-- <%Response.Write("Hello World\n"); %> -->
+            <!-- <%Response.Write("Hello World</br>"); %> -->
             <asp:Label ID="lblName" runat="server" Text="Name"></asp:Label>
             <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
             <br />
@@ -35,11 +35,22 @@
             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
         </p>
 
-        <h1>De aca en adelante, se muestra la información del WebUserControl</h1>
+        <h2>De aca en adelante, se muestra la información del WebUserControl</h2>
 
         <!-- 8. Se hace referencia al componente del WebUserControl -->
         <TWebControl:WebControl ID="Header" runat="server" MinValue="100"/>
+
+        <!-- 15. Se agregan campos de formulario, para ser consultados en la db -->
+        <h2>De aca en adelante, se envia información de tabla de db a formulario</h2>
+
+        <asp:Label ID="Label1" runat="server" Text="Tutorial ID"></asp:Label>
+        <asp:ListBox ID="ListBox1" runat="server" DataSourceID="ASPDemoDBDatasource" DataTextField="TutorialID" DataValueField="TutorialID"></asp:ListBox>
         
+        <asp:SqlDataSource ID="ASPDemoDBDatasource" runat="server" ConnectionString="<%$ ConnectionStrings:ASPDemoDBConnectionString %>" SelectCommand="SELECT * FROM [demotb]"></asp:SqlDataSource>
+        
+        <asp:Label ID="Label2" runat="server" Text="Tutorial Name"></asp:Label>
+        <asp:ListBox ID="ListBox2" runat="server" DataSourceID="ASPDemoDBDatasource" DataTextField="TutorialName" DataValueField="TutorialName"></asp:ListBox>
+
     </form>
 </body>
 </html>
