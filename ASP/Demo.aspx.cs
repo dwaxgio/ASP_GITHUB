@@ -12,7 +12,7 @@ namespace ASP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // 10. Se establece conexión a la base de datos
+            // 10. Se establece conexión a la base de datos //test
             string connectionString;  // Declaración de variables
             SqlConnection cnn; // Declaración de variables
 
